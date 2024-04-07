@@ -63,11 +63,12 @@ public class NewCDStage {
         root.setCenter(new VBox(nameHBox, genreHBox, publisherHBox, hBoxButton));
 
         this.stage.setTitle("New CD");
-        this.stage.setScene(new Scene(root, 300, 300)); // Initialization of the root to a Scene at Scene
+        this.stage.setScene(new Scene(root, 300, 200)); // Initialization of the root to a Scene at Scene
     }
 
     public void setCloseButton() {
         this.closeButton = new Button("Close");
+        this.closeButton.setStyle("-fx-background-color: #cf142b; -fx-text-fill: white;");
 
         // Closing this stage after it's usage
         this.closeButton.setOnAction(actionEvent -> {

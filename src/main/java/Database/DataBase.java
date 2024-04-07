@@ -112,7 +112,7 @@ public class DataBase {
                 Date cdAndClientBeginDate = rs.getDate("begin_date");
                 Date cdAndClientEndDate = rs.getDate("end_date");
 
-                statisticDataArrayList.add(new StatisticData(idCDAndClient,idClient, nameClient, idCD, nameCD, cdAndClientBeginDate, cdAndClientEndDate));
+                statisticDataArrayList.add(new StatisticData(idCDAndClient, idClient, nameClient, idCD, nameCD, cdAndClientBeginDate, cdAndClientEndDate));
             }
             st.close();
         } catch (SQLException e) {

@@ -84,7 +84,7 @@ public class StatisticStage {
         nameCDColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("nameCDProperty"));
         beginDateColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("cdAndClientBeginDateProperty"));
 
-        tableView.getColumns().addAll(idIssueColumn,idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn);
+        tableView.getColumns().addAll(idIssueColumn, idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn);
 
         // Setting max height (6) of rows
         tableView.setFixedCellSize(30);
@@ -117,7 +117,7 @@ public class StatisticStage {
         beginDateColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("cdAndClientBeginDateProperty"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("cdAndClientEndDateProperty"));
 
-        tableView.getColumns().addAll(idIssueColumn,idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn, endDateColumn);
+        tableView.getColumns().addAll(idIssueColumn, idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn, endDateColumn);
 
         // Setting max height (6) of rows
         tableView.setFixedCellSize(30);
@@ -127,6 +127,7 @@ public class StatisticStage {
 
     public void setCloseButton() {
         this.closeButton = new Button("Close");
+        this.closeButton.setStyle("-fx-background-color: #cf142b; -fx-text-fill: white;");
 
         // Closing this stage after it's usage
         this.closeButton.setOnAction(actionEvent -> {

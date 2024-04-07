@@ -39,13 +39,12 @@ public class ReturnCDStage {
 
         HBox issueIDHBox = new HBox(labelIssueID, issueIDTextField); // HBox used for Issue ID
         HBox currentDateHBox = new HBox(labelCurrentDate, endDateTextField); // HBox used for Current Date
-        root.setCenter(new VBox(issueIDHBox, currentDateHBox));
+        HBox hBoxButton = new HBox(addButton, closeButton); // HBox used for Buttons
+        root.setCenter(new VBox(issueIDHBox, currentDateHBox, hBoxButton));
 
-        HBox hBoxButton = new HBox(addButton, closeButton);
-        root.setBottom(hBoxButton);
 
         this.stage.setTitle("Return CD");
-        this.stage.setScene(new Scene(root, 300, 300));
+        this.stage.setScene(new Scene(root, 300, 200));
     }
 
     public void setAddButton() {
@@ -67,6 +66,7 @@ public class ReturnCDStage {
 
     public void setCloseButton() {
         this.closeButton = new Button("Close");
+        this.closeButton.setStyle("-fx-background-color: #cf142b; -fx-text-fill: white;");
 
         // Closing this stage after it's usage
         this.closeButton.setOnAction(actionEvent -> {

@@ -105,11 +105,12 @@ public class NewClientStage {
         root.setCenter(new VBox(nameHBox, lastnameHBox, birthDateHBox, hBoxButton)); // Setting Panes above to the root
 
         this.stage.setTitle("New Client");
-        this.stage.setScene(new Scene(root, 300, 300)); // Initialization of the root to a Scene at Scene
+        this.stage.setScene(new Scene(root, 300, 200)); // Initialization of the root to a Scene at Scene
     }
 
     public void setCloseButton() {
         this.closeButton = new Button("Close");
+        this.closeButton.setStyle("-fx-background-color: #cf142b; -fx-text-fill: white;");
 
         // Closing this stage after it's usage
         this.closeButton.setOnAction(actionEvent -> {

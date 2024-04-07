@@ -112,6 +112,7 @@ public class SceneDashboard {
     // Button used to go back to SceneLogin
     public void setButtonLogout() {
         this.buttonLogout = new Button("Logout");
+        this.buttonLogout.setStyle("-fx-background-color: #cf142b; -fx-text-fill: white;");
 
         // This block switch SceneLogin and SceneDashboard
         this.buttonLogout.setOnAction(actionEvent -> {
@@ -131,11 +132,11 @@ public class SceneDashboard {
     public void setScene() {
         BorderPane root = new BorderPane();
         HBox hBoxButtons = new HBox(buttonNewClient, buttonNewCD, buttonStatistic, buttonIssueCD, buttonReturnCD, buttonLogout);
+        hBoxButtons.setSpacing(10);
 
         root.setTop(hBoxButtons);
-        this.scene = new Scene(root, 700, 700);
+        this.scene = new Scene(root, 640, 360);
     }
-
 
 
     // Method used to disable all button (as said). Used when a new Stage is opened

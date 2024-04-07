@@ -24,6 +24,7 @@ public class SceneAboutCD {
 
     public void setButtonClose() {
         this.buttonGoBack = new Button("Go Back");
+        this.buttonGoBack.setStyle("-fx-background-color: #cf142b; -fx-text-fill: white;");
 
         // This block switch SceneLogin and SceneDashboard
         this.buttonGoBack.setOnAction(actionEvent -> {

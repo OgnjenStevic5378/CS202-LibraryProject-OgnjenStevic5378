@@ -62,6 +62,7 @@ public class SceneLogin {
     // Button initialization
     public void setButtonClose() {
         this.buttonClose = new Button("Close");
+        this.buttonClose.setStyle("-fx-background-color: #cf142b; -fx-text-fill: white;");
 
         this.buttonClose.setOnAction(actionEvent -> {
             Window window = scene.getWindow();
@@ -121,6 +122,6 @@ public class SceneLogin {
 
         root.setCenter(new VBox(hBoxUsername, hBoxPassword, hBoxButton));
 
-        this.scene = new Scene(root, 500, 500); // Initialization of the root to a Scene and specifying dimensions
+        this.scene = new Scene(root, 640, 360); // Initialization of the root to a Scene and specifying dimensions
     }
 }

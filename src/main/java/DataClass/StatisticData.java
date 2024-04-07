@@ -19,7 +19,7 @@ public class StatisticData {
     public StatisticData() {
     }
 
-    public StatisticData(int idCDAndClient,int idClient, String nameClient, int idCD, String nameCD, Date cdAndClientBeginDate, Date cdAndClientEndDate) {
+    public StatisticData(int idCDAndClient, int idClient, String nameClient, int idCD, String nameCD, Date cdAndClientBeginDate, Date cdAndClientEndDate) {
         this.idCDAndClient = new SimpleIntegerProperty(idCDAndClient);
         this.idClientProperty = new SimpleIntegerProperty(idClient);
         this.nameClientProperty = new SimpleStringProperty(nameClient);
