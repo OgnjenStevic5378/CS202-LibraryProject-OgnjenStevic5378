@@ -24,10 +24,6 @@ public class AlertManager {
         showAlert(AlertType.ERROR, "Invalid Password or Username", "Invalid password or username. Please try again.");
     }
 
-    public static void showDuplicatedIDAlert() {
-        showAlert(AlertType.ERROR, "Duplicate Entry", "Entered ID already exists. Please try again.");
-    }
-
     public static void showSuccessfullyAlert() {
         showAlert(AlertType.INFORMATION, "Success", "Operation completed successfully.");
     }

@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import java.sql.Date;
 
 public class StatisticData {
+    private SimpleIntegerProperty idCDAndClient;
     private SimpleIntegerProperty idClientProperty;
     private SimpleStringProperty nameClientProperty;
     private SimpleIntegerProperty idCDProperty;
@@ -18,7 +19,8 @@ public class StatisticData {
     public StatisticData() {
     }
 
-    public StatisticData(int idClient, String nameClient, int idCD, String nameCD, Date cdAndClientBeginDate, Date cdAndClientEndDate) {
+    public StatisticData(int idCDAndClient,int idClient, String nameClient, int idCD, String nameCD, Date cdAndClientBeginDate, Date cdAndClientEndDate) {
+        this.idCDAndClient = new SimpleIntegerProperty(idCDAndClient);
         this.idClientProperty = new SimpleIntegerProperty(idClient);
         this.nameClientProperty = new SimpleStringProperty(nameClient);
         this.idCDProperty = new SimpleIntegerProperty(idCD);
@@ -33,6 +35,18 @@ public class StatisticData {
         } catch (Exception e) {
             this.cdAndClientEndDateProperty = null;
         }
+    }
+
+    public int getIdCDAndClient() {
+        return idCDAndClient.get();
+    }
+
+    public SimpleIntegerProperty idCDAndClientProperty() {
+        return idCDAndClient;
+    }
+
+    public void setIdCDAndClient(int idCDAndClient) {
+        this.idCDAndClient.set(idCDAndClient);
     }
 
     public static void StatisticStage() {

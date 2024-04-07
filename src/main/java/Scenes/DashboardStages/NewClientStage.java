@@ -30,7 +30,6 @@ import java.time.format.DateTimeFormatter;
 
 public class NewClientStage {
     private Stage stage = new Stage();
-    private TextField idTextField = new TextField();
     private TextField nameTextField = new TextField();
     private TextField lastnameTextField = new TextField();
     private DatePicker birthDateDatePicker;
@@ -98,13 +97,12 @@ public class NewClientStage {
         Label labelLastname = new Label("Lastname: ");
         Label labelBirthdate = new Label("Birthdate: ");
 
-        HBox idHBox = new HBox(labelID, idTextField); // Pane for ID
         HBox nameHBox = new HBox(labelName, nameTextField); // Pane for Client Name
         HBox lastnameHBox = new HBox(labelLastname, lastnameTextField); // Pane for Client Lastname
         HBox birthDateHBox = new HBox(labelBirthdate, birthDateDatePicker); // Pane for Client Birthdate
         HBox hBoxButton = new HBox(addButton, closeButton); // Pane for Buttons
 
-        root.setCenter(new VBox(idHBox, nameHBox, lastnameHBox, birthDateHBox, hBoxButton)); // Setting Panes above to the root
+        root.setCenter(new VBox(nameHBox, lastnameHBox, birthDateHBox, hBoxButton)); // Setting Panes above to the root
 
         this.stage.setTitle("New Client");
         this.stage.setScene(new Scene(root, 300, 300)); // Initialization of the root to a Scene at Scene
@@ -125,13 +123,12 @@ public class NewClientStage {
         // Executing MySQL adding a new Client
         this.addButton.setOnAction(actionEvent -> {
             // Reading everything from TextFields
-            int idClient = Integer.parseInt(idTextField.getText());
             String name = nameTextField.getText();
             String lastName = lastnameTextField.getText();
             Date birthDate = Date.valueOf(birthDateDatePickerString);
 
             // Executing MySQL query for adding a new Client
-            DataBase.addNewClient(idClient, name, lastName, birthDate);
+            DataBase.addNewClient(name, lastName, birthDate);
         });
     }
 }

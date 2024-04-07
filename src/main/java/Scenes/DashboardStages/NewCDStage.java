@@ -28,7 +28,6 @@ import java.time.format.DateTimeFormatter;
 
 public class NewCDStage {
     private Stage stage = new Stage();
-    private TextField idTextField = new TextField();
     private TextField nameTextField = new TextField();
     private ComboBox<String> genreComboBox = new ComboBox<>();
     private TextField publisherYearTextField = new TextField();
@@ -56,13 +55,12 @@ public class NewCDStage {
         Label labelGenre = new Label("Genre: ");
         Label labelPublisherYear = new Label("Publisher Year: ");
 
-        HBox idHBox = new HBox(labelID, idTextField); // Pane for ID
         HBox nameHBox = new HBox(labelName, nameTextField); // Pane for CD Name
         HBox genreHBox = new HBox(labelGenre, genreComboBox); // Pane for CD Genre
         HBox publisherHBox = new HBox(labelPublisherYear, publisherYearTextField); // Pane for CD Publisher Year
         HBox hBoxButton = new HBox(addButton, closeButton); // Pane Buttons
 
-        root.setCenter(new VBox(idHBox, nameHBox, genreHBox, publisherHBox, hBoxButton));
+        root.setCenter(new VBox(nameHBox, genreHBox, publisherHBox, hBoxButton));
 
         this.stage.setTitle("New CD");
         this.stage.setScene(new Scene(root, 300, 300)); // Initialization of the root to a Scene at Scene
@@ -85,7 +83,6 @@ public class NewCDStage {
             Integer publisherYear = null;
 
             // Reading everything from TextFields
-            int idClient = Integer.parseInt(idTextField.getText());
             String name = nameTextField.getText();
             String genre = genreComboBox.getValue();
             String publisherYearString = publisherYearTextField.getText();
@@ -100,7 +97,7 @@ public class NewCDStage {
                     throw new genreNullException();
                 } else {
                     // Executing MySQL query for adding a new CD
-                    DataBase.addNewCD(idClient, name, genre, publisherYear);
+                    DataBase.addNewCD(name, genre, publisherYear);
                 }
             } catch (genreNullException e) {
                 AlertManager.showGenreNullAlert();

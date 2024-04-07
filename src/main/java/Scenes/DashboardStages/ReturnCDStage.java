@@ -1,5 +1,6 @@
 package Scenes.DashboardStages;
 
+import Database.DataBase;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -56,7 +57,7 @@ public class ReturnCDStage {
             int issueID = Integer.parseInt(issueIDTextField.getText());
 
             // Database
-            returnCD(issueID, this.endDate);
+            DataBase.returnCD(issueID, this.endDate);
         });
     }
 

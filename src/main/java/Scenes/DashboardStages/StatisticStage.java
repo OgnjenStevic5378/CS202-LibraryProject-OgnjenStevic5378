@@ -69,20 +69,22 @@ public class StatisticStage {
         tableView.setItems(statisticData);
 
         // Define columns
-        TableColumn idClientColumn = new TableColumn("ID Client:");
+        TableColumn idIssueColumn = new TableColumn<>("ID Issue:");
+        TableColumn idClientColumn = new TableColumn<>("ID Client:");
         TableColumn nameClientColumn = new TableColumn<>("Client's Name:");
         TableColumn idCDColumn = new TableColumn<>("ID CD:");
         TableColumn nameCDColumn = new TableColumn<>("CD Name:");
         TableColumn beginDateColumn = new TableColumn<>("Begin Date:");
 
         // Values
+        idIssueColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, Integer>("idCDAndClient"));
         idClientColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, Integer>("idClientProperty"));
         nameClientColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("nameClientProperty"));
         idCDColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, Integer>("idCDProperty"));
         nameCDColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("nameCDProperty"));
         beginDateColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("cdAndClientBeginDateProperty"));
 
-        tableView.getColumns().addAll(idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn);
+        tableView.getColumns().addAll(idIssueColumn,idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn);
 
         // Setting max height (6) of rows
         tableView.setFixedCellSize(30);
@@ -98,6 +100,7 @@ public class StatisticStage {
         tableView.setItems(statisticData);
 
         // Define columns
+        TableColumn idIssueColumn = new TableColumn("ID Issue:");
         TableColumn idClientColumn = new TableColumn("ID Client:");
         TableColumn nameClientColumn = new TableColumn<>("Client's Name:");
         TableColumn idCDColumn = new TableColumn<>("ID CD:");
@@ -106,6 +109,7 @@ public class StatisticStage {
         TableColumn endDateColumn = new TableColumn<>("End Date:");
 
         // Values
+        idIssueColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, Integer>("idCDAndClient"));
         idClientColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, Integer>("idClientProperty"));
         nameClientColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("nameClientProperty"));
         idCDColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, Integer>("idCDProperty"));
@@ -113,7 +117,7 @@ public class StatisticStage {
         beginDateColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("cdAndClientBeginDateProperty"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<StatisticData, String>("cdAndClientEndDateProperty"));
 
-        tableView.getColumns().addAll(idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn, endDateColumn);
+        tableView.getColumns().addAll(idIssueColumn,idClientColumn, nameClientColumn, idCDColumn, nameCDColumn, beginDateColumn, endDateColumn);
 
         // Setting max height (6) of rows
         tableView.setFixedCellSize(30);
